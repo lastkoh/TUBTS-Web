@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html class="uk-height-1-1"> 
+<head> 
+<title>TUBTS</title> 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHSq2E462-antSzUAALxwC1oBvSmij4tw&libraries=geometry&amp;sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/map.js"></script>
+    <link rel="stylesheet" type="text/css" href="uikit/css/uikit.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="uikit/js/uikit.min.js"></script>
+    <script src="js/login.js"></script>
+      
+    <!--OneSignal-->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+    <script src="js/onesignal.js"></script>
+    
+  
+</head> 
+<body>
+    <div id="navbar" class="uk-width-medium-1-1">
+        <nav class="uk-navbar uk-margin-large-bottom">
+            <a class="uk-navbar-brand uk-hidden-small" href="index.html"><img src="images/logo.png" alt="logo" width="30" height="30" align="middle" hspace="20"></img>TUBTS</a>
+            <ul id="navList" class="uk-navbar-nav uk-hidden-small uk-navbar-center">
+                <li class="uk-active">
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="announcement.html">Announcement</a>
+                </li>
+                <li>
+                    <a href="resources.html">Resources</a>
+                </li>
+            </ul>
+            <div id="loginInfo" style="align: center; float: right"></div>
+            <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+            <div class="uk-navbar-brand uk-navbar-center uk-visible-small">TUBTS</div>
+        </nav>
+    </div>
+  
+    <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">   
+    <div class="uk-grid" data-uk-grid-margin>
+        
+    <div class="uk-grid uk-width-medium-1-1">
+        <div class="uk-width-medium-1-1">
+            <div class="uk-button-dropdown" style="display: inline-block" data-uk-dropdown="{mode:'click'}"> 
+              <button id="btnRouteSelect" class="uk-button uk-button-primary"><b>Select Route </b><i class="uk-icon-caret-down"></i></button>
+                <div class="uk-dropdown">
+                    <ul class="uk-nav uk-nav-dropdown">
+                        <li><a id="TU1A">TU1A</a></li>
+                        <li><a id="TU1C">TU1C</a></li>
+                        <!--<li><a id="remove">Remove</a></li>-->
+                    </ul>
+                </div>
+            </div>
+          
+            <!--Next Stop and ETA -->
+            <div class="nextStopETA" style="display: inline-block">
+            <label style="display: inline; padding-left: 40px; font-weight: bold; color: #F75C5C;">Next Stop: </label>
+                <label id="nextStop" style="display: inline; padding-left: 10px; font-weight: bold;"></label>
+            <label style="display: inline; padding-left: 40px; font-weight: bold; color: #F75C5C;">ETA: </label>
+                <label id="etaMins" style="display: inline; padding-left: 10px; font-size: 20px; font-weight: bold;">0</label><label style="display: inline; padding-left: 5px">mins</label>
+            </div>
+          
+        </div>
+        <div class="uk-width-medium-1-1">
+            <div class="uk-vertical-align uk-text-center">
+                <div id="map" class="uk-vertical-align-middle uk-width-1-2" style="width: 100%; height: 680px;">
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    <div class="uk-grid uk-width-medium-1-1">
+        <div id="serviceList" class="uk-width-medium-1-1" style="font-weight: bold; color:#b71c1c"></div>
+        <div id="stopsList" class="uk-margin uk-width-medium-1-2"></div>
+        <div id="stopDetails" class="uk-width-medium-1-2"></div>
+    </div>  
+    </div>
+      
+    </div>
+  
+    <div id="offcanvas" class="uk-offcanvas">
+        <div class="uk-offcanvas-bar">
+            <ul id="offcanvasNavList" class="uk-nav uk-nav-offcanvas">
+                <li class="uk-active">
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="announcement.html">Announcement</a>
+                </li>
+                <li>
+                    <a href="resources.html">Resources</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body> 
+</html>

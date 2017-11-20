@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html class="uk-height-1-1">
+    <head>
+        <title>Announcements</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" type="text/css" href="uikit/css/uikit.min.css">
+        <script src="js/jquery.js"></script>
+        <script src="uikit/js/uikit.min.js"></script>
+        
+        <!-- Codemirror and marked dependencies -->
+        <link rel="stylesheet" type="text/css" href="codemirror/lib/codemirror.css">
+        <script src="codemirror/lib/codemirror.js"></script>
+        <script src="codemirror/mode/markdown/markdown.js"></script>
+        <script src="codemirror/addon/mode/overlay.js"></script>
+        <script src="codemirror/mode/xml/xml.js"></script>
+        <script src="codemirror/mode/gfm/gfm.js"></script>
+        <script src="marked/lib/marked.js"></script>
+
+        <!-- UIkit CSS-->
+        <link rel="stylesheet" type="text/css" href="uikit/css/components/htmleditor.css">
+        <link rel="stylesheet" type="text/css" href="uikit/css/components/accordion.css">
+      
+        <!--UIkit js-->
+        <script src="uikit/js/components/htmleditor.js"></script>
+        <script src="uikit/js/components/accordion.js"></script>
+      
+        <!-- My JS -->
+        <script src="js/announcement.js"></script>
+        <script src="js/login.js"></script>
+      
+        <!--OneSignal-->
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+        <script src="js/onesignal.js"></script>
+        
+    </head>
+    <body>
+        <div id="navbar" class="uk-width-medium-1-1">
+            <nav class="uk-navbar uk-margin-large-bottom">
+                <a class="uk-navbar-brand uk-hidden-small" href="index.html"><img src="images/logo.png" alt="logo" width="30" height="30" align="middle" hspace="20"></img>TUBTS</a>
+                <ul id="navList" class="uk-navbar-nav uk-hidden-small  uk-navbar-center">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="uk-active">
+                        <a href="announcement.html">Announcement</a>
+                    </li>
+                    <li>
+                        <a href="resources.html">Resources</a>
+                    </li>
+                </ul>
+                <div id="loginInfo" style="align: center; float: right"></div>
+                <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+                <div class="uk-navbar-brand uk-navbar-center uk-visible-small">TUBTS</div>
+            </nav>
+        </div>
+      
+        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+        <div>
+            <h1>Announcements</h1>   
+        </div> 
+        <hr class="uk-article-divider"/>
+        
+        <div class="announcement-area"  data-uk-observe>
+            <a href="#newAnnouncementModal" data-uk-modal></a>
+            <div id="buttons">
+              <div id="btnLoad" class="uk-button uk-button-primary"><i class="uk-icon-refresh"></i> Refresh</div>
+                <label id="lastRefresh" style="vertical-align: bottom"></label>
+            </div>
+            <div id="announcementList" class="uk-sortable uk-margin uk-accordion" data-uk-sortable="{group:'test'}">
+            </div>
+        </div>
+        
+        <div class="uk-grid" data-uk-grid-margin>
+            <div class="uk-width-medium-1-1">  
+                
+                
+                <div id="newAnnouncementModal" class="uk-modal">
+                    <div class="uk-modal-dialog uk-modal-dialog-large">
+                        <button type="button" class="uk-modal-close uk-close"></button>
+                        <div class="uk-modal-header">
+                            <h2>Create New Announcement</h2>
+                        </div>
+                        <label>Title: </label><input id="title" class="uk-width-medium-1-4" type="text" style="display: inline;">
+                        <div><textarea id="content" data-uk-htmleditor></textarea></div>
+                        <div class="uk-modal-footer uk-text-right">
+                            <button type="button" class="uk-button uk-button-danger uk-modal-close">Cancel</button>
+                            <div id="btnSubmit" class="uk-button uk-button-primary" style="float: right;">Submit</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="debug"></div>
+        
+        </div>
+      
+        <div id="offcanvas" class="uk-offcanvas">
+            <div class="uk-offcanvas-bar">
+                <ul id="offcanvasNavList" class="uk-nav uk-nav-offcanvas">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="uk-active">
+                        <a href="announcement.html">Announcement</a>
+                    </li>
+                    <li>
+                        <a href="resources.html">Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
